@@ -101,6 +101,13 @@ const CONFIG = {
       companyLink: '',
     },
     {
+      company: 'Scotiabank',
+      position: 'Analyst, Corporate Security Team',
+      from: 'May 2023',
+      to: 'Aug 2023',
+      companyLink: 'https://www.scotiabank.com/ca/en/about/our-company.html',
+    },
+    {
       company: 'Promise Robotics',
       position: 'Software Engineer Intern',
       from: 'May 2022',
@@ -112,8 +119,14 @@ const CONFIG = {
     {
       name: 'Google Cyber Security Professional Certification',
       body: 'Networking, Scripting, NIST, OWASP Top 10',
-      year: 'March 2022',
-      link: 'https://example.com',
+      year: 'Sept 2023',
+      link: 'https://www.coursera.org/account/accomplishments/professional-cert/EDUQD529YZXG?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=pdf_header_button&utm_product=prof',
+    },
+    {
+      name: 'ISC2 Certified in Cybersecurity',
+      body: 'Access Control, Business Continuity, Disaster Recovery, Incident Response, SecOps',
+      year: 'Nov 2023',
+      link: 'https://www.credly.com/badges/61052083-4ba4-4ada-93e7-6eb8ce5600d1/public_url',
     },
   ],
   educations: [
@@ -228,11 +241,7 @@ const CONFIG = {
   },
 
   // Optional Footer. Supports plain text or HTML.
-  footer: `Made with <a 
-      class="text-primary" href="https://github.com/arifszn/gitprofile"
-      target="_blank"
-      rel="noreferrer"
-    >GitProfile</a> and ❤️`,
+  footer: '',
 
   enablePWA: true,
 };
