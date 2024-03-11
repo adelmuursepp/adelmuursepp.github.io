@@ -13,7 +13,7 @@ const CONFIG = {
   projects: {
     github: {
       display: true, // Display GitHub projects?
-      header: 'Github Projects',
+      header: 'Github Featured Projects',
       mode: 'manual', // Mode can be: 'automatic' or 'manual'
       automatic: {
         sortBy: 'stars', // Sort projects by 'stars' or 'updated'
@@ -29,25 +29,24 @@ const CONFIG = {
       },
     },
     external: {
-      header: 'My Projects',
+      header: 'Community Involvement & Projects',
       // To hide the `External Projects` section, keep it empty.
       projects: [
-        // {
-        //   title: 'Project Name',
-        //   description:
-        //     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut.',
-        //   imageUrl:
-        //     'https://img.freepik.com/free-vector/illustration-gallery-icon_53876-27002.jpg',
-        //   link: 'https://example.com',
-        // },
-        // {
-        //   title: 'Project Name',
-        //   description:
-        //     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut.',
-        //   imageUrl:
-        //     'https://img.freepik.com/free-vector/illustration-gallery-icon_53876-27002.jpg',
-        //   link: 'https://example.com',
-        // },
+        {
+          title: 'Microsoft Student Ambassador',
+          description:
+            'Led 5 workshops on campus, hosting a workshop with Microsoft Reactor on databases that was streamed live on YouTube. Speaker at conference hosted by GSDC at the Microsoft office and the Bay Area’s largest women hackathon Superposition. Speaker on how to develop web applications at Canada’s largest hackathon Hack the North. Reaching a total audience of over 500 attendees.',
+          imageUrl:'',
+          link: 'https://developer.microsoft.com/en-us/reactor/events/18451/',
+        },
+          {
+            title: 'Department of Computer Science Ambassador',
+            description:
+              'Represented the university at various outreach events, such as program exploration days, open campus days by giving a talk to an audience of over 100 students. Compiled entrepreneurship-related resources on campus.',
+            imageUrl:
+              '',
+            link: '',
+          },
       ],
     },
   },
