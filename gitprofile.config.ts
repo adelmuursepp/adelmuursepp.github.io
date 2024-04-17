@@ -29,7 +29,7 @@ const CONFIG = {
       },
     },
     external: {
-      header: 'Community Involvement & Projects',
+      header: 'Community Involvement, Talks & Projects',
       // To hide the `External Projects` section, keep it empty.
       projects: [
         {
@@ -42,7 +42,7 @@ const CONFIG = {
           {
             title: 'Department of Computer Science Ambassador',
             description:
-              'Represented the university at various outreach events, such as program exploration days, open campus days by giving a talk to an audience of over 100 students. Compiled entrepreneurship-related resources on campus.',
+              'Represented the university at various outreach events, such as program exploration days, open campus days by giving a talk to an audience of over 100 students. Compiled entrepreneurship-related resources on campus and serving as a mentor for first and second year students.',
             imageUrl:
               '',
             link: '',
@@ -169,7 +169,7 @@ const CONFIG = {
     limit: 3, // How many articles to display. Max is 10.
   },
   googleAnalytics: {
-    id: '', // GA3 tracking id/GA4 tag id UA-XXXXXXXXX-X | G-XXXXXXXXXX
+    id: 'G-GX6WVREJQP', // GA3 tracking id/GA4 tag id UA-XXXXXXXXX-X | G-XXXXXXXXXX
   },
   // Track visitor interaction and behavior. https://www.hotjar.com
   hotjar: {
