@@ -90,3 +90,50 @@ svg {
     opacity: 1;
   }
 }
+
+/* Swiper carousel customizations */
+.projects-carousel {
+  padding-bottom: 3rem !important;
+}
+
+.projects-carousel .swiper {
+  padding: 0 50px;
+}
+
+.projects-carousel .swiper-pagination {
+  bottom: 0 !important;
+}
+
+.projects-carousel .swiper-button-next,
+.projects-carousel .swiper-button-prev {
+  @apply text-primary;
+  width: 40px;
+  height: 40px;
+}
+
+.projects-carousel .swiper-button-next::after,
+.projects-carousel .swiper-button-prev::after {
+  font-size: 20px;
+}
+
+.projects-carousel .swiper-pagination-bullet {
+  @apply bg-primary opacity-50;
+  width: 8px;
+  height: 8px;
+}
+
+.projects-carousel .swiper-pagination-bullet-active {
+  @apply opacity-100;
+  width: 24px;
+  border-radius: 4px;
+}
+
+/* Project carousel badge styling */
+.projects-carousel .badge {
+  border-radius: 9999px !important;
+}
+
+/* Project modal animations */
+.project-modal-overlay {
+  backdrop-filter: blur(4px);
+}

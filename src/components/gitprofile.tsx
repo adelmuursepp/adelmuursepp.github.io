@@ -25,7 +25,7 @@ import ExperienceCard from './experience-card';
 import EducationCard from './education-card';
 import CertificationCard from './certification-card';
 import { GithubProject } from '../interfaces/github-project';
-import GithubProjectCard from './github-project-card';
+import ProjectsCarousel from './projects-carousel';
 import ExternalProjectCard from './external-project-card';
 import BlogCard from './blog-card';
 import Footer from './footer';
@@ -72,18 +72,24 @@ const GitProfile = ({ config }: { config: Config }) => {
         if (sanitizedConfig.projects.github.manual.projects.length === 0) {
           return [];
         }
-        const repos = sanitizedConfig.projects.github.manual.projects
-          .map((project) => `+repo:${project}`)
-          .join('');
+        
+        // Fetch each repository individually to avoid search indexing issues
+        const projects = [];
+        for (const project of sanitizedConfig.projects.github.manual.projects) {
+          try {
+            const repoResponse = await axios.get(
+              `https://api.github.com/repos/${project}`,
+              {
+                headers: { 'Content-Type': 'application/vnd.github.v3+json' },
+              },
+            );
+            projects.push(repoResponse.data);
+          } catch (error) {
+            console.warn(`Could not fetch repository: ${project}`, error);
+          }
+        }
 
-        const url = `https://api.github.com/search/repositories?q=${repos}&type=Repositories`;
-
-        const repoResponse = await axios.get(url, {
-          headers: { 'Content-Type': 'application/vnd.github.v3+json' },
-        });
-        const repoData = repoResponse.data;
-
-        return repoData.items;
+        return projects;
       }
     },
     [
@@ -247,20 +253,59 @@ const GitProfile = ({ config }: { config: Config }) => {
                 <div className="lg:col-span-2 col-span-1">
                   <div className="grid grid-cols-1 gap-6">
                     {sanitizedConfig.projects.github.display && (
-                      <GithubProjectCard
-                        header={sanitizedConfig.projects.github.header}
-                        limit={sanitizedConfig.projects.github.automatic.limit}
-                        githubProjects={githubProjects}
-                        loading={loading}
-                        username={sanitizedConfig.github.username}
-                        googleAnalyticsId={sanitizedConfig.googleAnalytics.id}
-                      />
-                    )}
-                    {sanitizedConfig.publications.length !== 0 && (
-                      <PublicationCard
-                        loading={loading}
-                        publications={sanitizedConfig.publications}
-                      />
+                      <div className="col-span-1 lg:col-span-2">
+                        <div className="grid grid-cols-2 gap-6">
+                          <div className="col-span-2">
+                            <div className="card compact bg-base-100 shadow bg-opacity-40">
+                              <div className="card-body">
+                                <div className="mx-3 flex items-center justify-between mb-2">
+                                  <h5 className="card-title">
+                                    {loading ? (
+                                      <div className="w-40 h-8 bg-base-300 animate-pulse rounded"></div>
+                                    ) : (
+                                      <span className="text-base-content opacity-70">
+                                        {sanitizedConfig.projects.github.header}
+                                      </span>
+                                    )}
+                                  </h5>
+                                  {loading ? (
+                                    <div className="w-10 h-5 bg-base-300 animate-pulse rounded"></div>
+                                  ) : (
+                                    <a
+                                      href={`https://github.com/${sanitizedConfig.github.username}?tab=repositories`}
+                                      target="_blank"
+                                      rel="noreferrer"
+                                      className="text-base-content opacity-50 hover:underline"
+                                    >
+                                      See All
+                                    </a>
+                                  )}
+                                </div>
+                                <div className="col-span-2">
+                                  {loading ? (
+                                    <div className="text-center py-8">
+                                      <span className="loading loading-spinner loading-md"></span>
+                                    </div>
+                                  ) : githubProjects.length === 0 ? (
+                                    <div className="text-center py-4 text-base-content/60">
+                                      No projects found
+                                    </div>
+                                  ) : (
+                                    <ProjectsCarousel
+                                      githubProjects={githubProjects}
+                                      externalProjects={[]}
+                                      projectsPerView={2}
+                                      autoplay={true}
+                                      showSeeAll={false}
+                                      onSeeAll={() => {}}
+                                    />
+                                  )}
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     )}
                     {sanitizedConfig.projects.external.projects.length !==
                       0 && (
@@ -271,6 +316,12 @@ const GitProfile = ({ config }: { config: Config }) => {
                           sanitizedConfig.projects.external.projects
                         }
                         googleAnalyticId={sanitizedConfig.googleAnalytics.id}
+                      />
+                    )}
+                    {sanitizedConfig.publications.length !== 0 && (
+                      <PublicationCard
+                        loading={loading}
+                        publications={sanitizedConfig.publications}
                       />
                     )}
                     {sanitizedConfig.blog.display && (

@@ -25,28 +25,31 @@ const CONFIG = {
       },
       manual: {
         // Properties for manually specifying projects
-        projects: ['adelmuursepp/co-flat-website', 'adelmuursepp/ellehacks2024'], // List of repository names to display. example: ['arifszn/my-project1', 'arifszn/my-project2']
+        projects: [
+          'adelmuursepp/co-flat-website',
+          'adelmuursepp/pocketdoc',
+          'adelmuursepp/ellehacks2024',
+        ], // List of repository names to display. example: ['arifszn/my-project1', 'arifszn/my-project2']
       },
     },
     external: {
-      header: 'Community Involvement, Talks & Projects',
+      header: 'Community Involvement & Talks',
       // To hide the `External Projects` section, keep it empty.
       projects: [
         {
           title: 'Microsoft Student Ambassador',
           description:
             'Led 5 workshops on campus, hosting a workshop with Microsoft Reactor on databases that was streamed live on YouTube. Speaker at conference hosted by GSDC at the Microsoft office and the Bay Area’s largest women hackathon Superposition. Speaker on how to develop web applications at Canada’s largest hackathon Hack the North. Reaching a total audience of over 500 attendees.',
-          imageUrl:'',
+          imageUrl: '',
           link: 'https://developer.microsoft.com/en-us/reactor/events/18451/',
         },
-          {
-            title: 'Department of Computer Science Ambassador',
-            description:
-              'Represented the university at various outreach events, such as program exploration days, open campus days by giving a talk to an audience of over 100 students. Compiled entrepreneurship-related resources on campus and serving as a mentor for first and second year students.',
-            imageUrl:
-              '',
-            link: '',
-          },
+        {
+          title: 'Department of Computer Science Ambassador',
+          description:
+            'Represented the university at various outreach events, such as program exploration days, open campus days by giving a talk to an audience of over 100 students. Compiled entrepreneurship-related resources on campus and serving as a mentor for first and second year students.',
+          imageUrl: '',
+          link: '',
+        },
       ],
     },
   },
@@ -75,8 +78,7 @@ const CONFIG = {
     email: 'adel.muursepp@gmail.com',
   },
   resume: {
-    fileUrl:
-      '', // Empty fileUrl will hide the `Download Resume` button.
+    fileUrl: '', // Empty fileUrl will hide the `Download Resume` button.
   },
   skills: [
     'Python',
@@ -143,24 +145,16 @@ const CONFIG = {
     },
   ],
   publications: [
-    // {
-    //   title: 'Publication Title',
-    //   conferenceName: '',
-    //   journalName: 'Journal Name',
-    //   authors: 'John Doe, Jane Smith',
-    //   link: 'https://example.com',
-    //   description:
-    //     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    // },
-    // {
-    //   title: 'Publication Title',
-    //   conferenceName: 'Conference Name',
-    //   journalName: '',
-    //   authors: 'John Doe, Jane Smith',
-    //   link: 'https://example.com',
-    //   description:
-    //     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    // },
+    {
+      title: 'Privacy Risks of Speculative Decoding in Large Language Models',
+      conferenceName: '',
+      journalName: 'arXiv preprint arXiv:2411.01076',
+      authors:
+        'Jiankun Wei, Abdulrahman Abdulrazzag, Tianchen Zhang, Adel Muursepp, Gururaj Saileshwar',
+      link: 'https://arxiv.org/abs/2411.01076',
+      description:
+        'This paper provides the first study demonstrating privacy risks of speculative decoding in large language models. We show that adversaries can fingerprint queries and learn private user inputs with over 90% accuracy by monitoring token generation patterns across REST, LADE, and BiLD techniques. The work also reveals how confidential intellectual property can be leaked and discusses mitigation strategies.',
+    },
   ],
   // Display articles from your medium or dev account. (Optional)
   blog: {
