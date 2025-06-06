@@ -26,6 +26,7 @@ const CONFIG = {
       manual: {
         // Properties for manually specifying projects
         projects: [
+          'adelmuursepp/cipher-shield',
           'adelmuursepp/co-flat-website',
           'adelmuursepp/pocketdoc',
           'adelmuursepp/ellehacks2024',

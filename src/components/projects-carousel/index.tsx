@@ -152,7 +152,7 @@ const ProjectsCarousel: FC<ProjectsCarouselProps> = ({
             </p>
             {project.technologies && project.technologies.length > 0 && (
               <div className="flex flex-wrap gap-1 mt-auto pt-4">
-                {project.technologies.slice(0, 3).map((tech, index) => (
+                {project.technologies.slice(0, 3).map((tech: string, index: number) => (
                   <span key={index} className="badge badge-primary badge-sm rounded-full">
                     {tech}
                   </span>
