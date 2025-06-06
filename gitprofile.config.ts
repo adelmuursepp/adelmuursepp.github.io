@@ -96,11 +96,39 @@ const CONFIG = {
   ],
   experiences: [
     {
+      company: 'Palantir Technologies',
+      position: 'Software Engineer Intern',
+      from: 'June 2025',
+      to: 'Aug 2025',
+      companyLink: 'https://www.palantir.com/',
+    },
+    {
+      company: 'Amazon',
+      position: 'Software Engineer Intern',
+      from: 'Jan 2025',
+      to: 'Apr 2025',
+      companyLink: 'https://www.palantir.com/',
+    },
+    {
+      company: 'IBM',
+      position: 'AI Developer Intern',
+      from: 'Sept 2024',
+      to: 'Jan 2024',
+      companyLink: 'https://www.palantir.com/',
+    },
+    {
+      company: 'Cisco',
+      position: 'Software Engineer Intern',
+      from: 'May 2024',
+      to: 'Aug 2024',
+      companyLink: 'https://www.palantir.com/',
+    },
+    {
       company: 'Go Beyond Capital',
       position: 'Venture Capital Part-time Internship',
       from: 'Jan 2024',
       to: 'Present',
-      companyLink: '',
+      companyLink: 'https://gobeyondcapital.com/',
     },
     {
       company: 'Scotiabank',
@@ -113,7 +141,7 @@ const CONFIG = {
       company: 'Promise Robotics',
       position: 'Software Engineer Intern',
       from: 'May 2022',
-      to: 'August 2022',
+      to: 'Aug 2022',
       companyLink: 'https://promiserobotics.com/',
     },
   ],
@@ -155,6 +183,16 @@ const CONFIG = {
       link: 'https://arxiv.org/abs/2411.01076',
       description:
         'This paper provides the first study demonstrating privacy risks of speculative decoding in large language models. We show that adversaries can fingerprint queries and learn private user inputs with over 90% accuracy by monitoring token generation patterns across REST, LADE, and BiLD techniques. The work also reveals how confidential intellectual property can be leaked and discusses mitigation strategies.',
+    },
+    {
+      title:
+        'Using Grammatical Tagging for Automated Language Proficiency Level Prediction',
+      conferenceName: '',
+      journalName: 'Research project developed for Tallinn University',
+      authors: 'Adel Muursepp',
+      link: 'https://akadeemiake.ee/wp-content/uploads/2021/06/Muursepp_masinope.pdf#page=33',
+      description:
+        'Developed automated language level prediction tools for Estonian using machine learning and grammatical tagging features. Achieved 69.8% prediction accuracy using Gradient Boosting on the CEFR scale with data from 958 texts. The research contributed to the Estonian Learner Language Corpus (EVKK) automated assessment tool, addressing the unique linguistic challenges of Estonian as a Finno-Ugric language.',
     },
   ],
   // Display articles from your medium or dev account. (Optional)
